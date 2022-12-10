@@ -1,0 +1,5 @@
+walidacja po uruchomieniu testow:
+    czy po uruchmieniu testu i otwarciu apki jestesmy zalogowani?
+    jezeli tak wyloguj mnie,
+    jezeli nie przejdz do logowania
+
