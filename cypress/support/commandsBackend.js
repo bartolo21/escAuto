@@ -24,7 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add("listenEndpoint", () => {
+Cypress.Commands.add("listenLoginEndpoint", () => {
     cy.intercept("POST", "https://chic-node.docker.mug.pl:8010/api/esc/login").as('loginVerify');
 })
 
@@ -40,4 +40,17 @@ Cypress.Commands.add("isLoginDataValid", () => {
           cy.get('generic-button[class="back"]').click();
         }
       }) 
+})
+
+Cypress.Commands.add("loginStatus", () => {
+  cy.intercept("GET", "https://chic-node.docker.mug.pl:8010/api/status").as("loginStatus");
+    cy.wait("@loginStatus").then(endpointResponse => {
+      const loginStatus = endpointResponse.response.body;
+      if (loginStatus.employeeContext != null || loginStatus.consumerContext != null) {
+        cy.log("Logged in with either salesman or consumer context -> logged out")
+        cy.logout();
+      } else {
+        cy.log("No salesman or consumer context")
+      }
+    })
 })
