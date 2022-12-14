@@ -25,5 +25,4 @@ Cypress.Commands.add("goToConsumerLoginTab", () => {
 
 Cypress.Commands.add("goToCart", () => {
     cy.get('a[routerlink="/cart-sale"]').click();
-    cy.get('button').eq(1).click();
 })
