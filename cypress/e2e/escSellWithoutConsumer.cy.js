@@ -16,5 +16,9 @@ describe('Register new eSC account', () => {
     it("Open cart", () => {
         cy.goToCart();
     })
+
+    it("Type product EAN and checkout", () => {
+        cy.addEanAndCheckout(2); //podaj ilosc produktow ktore chcesz dodac
+    })
   }) 
     
