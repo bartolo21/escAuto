@@ -25,4 +25,7 @@ Cypress.Commands.add("addEanAndCheckout", (productsQuantity) => {
     }
 })
 
-
+//dodac asercje finalizacji koszyka backend
+Cypress.Commands.add("closePopup", () => {
+    cy.get('button[class="white"]').click({multiple: true, force: true});
+})

@@ -1,4 +1,4 @@
-describe('Transaction without consumer context', () => {
+describe('Transaction with consumer context', () => {
     it('Open app', () => {
       cy.visit('/');
     })
@@ -13,8 +13,15 @@ describe('Transaction without consumer context', () => {
       cy.isLoginDataValid();
     })
 
-    it("Open cart", () => {
-        cy.goToCart();
+    it("Log in as a client", () => {
+      cy.listenLoginEndpoint();
+      cy.goToConsumerLoginTab()
+      cy.login("phone");
+      cy.isLoginDataValid();
+    })
+    
+    it("Open consumer cart", () => {
+      cy.goToConsumerCart();
     })
 
     it("Type product EAN and checkout", () => {

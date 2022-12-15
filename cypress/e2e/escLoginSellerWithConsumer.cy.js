@@ -1,4 +1,4 @@
-describe("eSC Automation tests" , () => {
+describe("Login seller with consumer context" , () => {
     it('Open app', () => {
     cy.visit('/');
   })
