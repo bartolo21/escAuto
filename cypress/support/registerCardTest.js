@@ -43,7 +43,6 @@ Cypress.Commands.add("fillRegForm", () => {
     cy.get('div[class="input"]').first().type(samplePhone);
     cy.get('div[class="input"]').eq(1).type(sampleName);
     cy.get('div[class="input"]').eq(2).type(sampleSurname);
-    console.log(sampleBirthdate)
     cy.get('div[class="input"]').eq(3).type(sampleBirthdate);
     cy.get('div[class="input"]').eq(4).type(sampleEmail);
 })

@@ -20,7 +20,7 @@ describe("Login seller with consumer context" , () => {
     cy.isLoginDataValid();
   })
 
-  it("Logout", () => {
-    cy.logout();
-  })
+  // it("Logout", () => {
+  //   cy.logout();
+  // })
 })
