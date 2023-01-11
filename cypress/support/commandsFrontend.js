@@ -30,3 +30,7 @@ Cypress.Commands.add("goToCart", () => {
 Cypress.Commands.add("goToConsumerCart", () => {
     cy.get('generic-button[routerlink="/cart-sale"] > button').click({force: true});
 })
+
+Cypress.Commands.add("waitAfterTransaction", () => {
+    cy.wait(4000);
+})

@@ -25,11 +25,17 @@ describe('Transaction with consumer context', () => {
     })
 
     it("Type product EAN and checkout", () => {
-        cy.addEanAndCheckout(2); //podaj ilosc produktow ktore chcesz dodac
+        cy.addEanAndCheckout(3); //podaj ilosc produktow ktore chcesz dodac
     })
 
     it("Close pop-up", () => {
       cy.closePopup();
+      cy.waitAfterTransaction();
+      cy.closePopup();
+    })
+
+    it("Check products in sales history", () => {
+      cy.goToSalesHistory();
     })
   }) 
     

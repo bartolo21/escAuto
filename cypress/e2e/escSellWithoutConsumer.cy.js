@@ -23,6 +23,8 @@ describe('Transaction without consumer context', () => {
 
     it("Close pop-up", () => {
       cy.closePopup();
+      cy.waitAfterTransaction();
+      cy.closePopup();
     })
   }) 
     

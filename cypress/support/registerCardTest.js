@@ -37,7 +37,7 @@ const sampleName = faker.name.firstName();
 const samplePhone = faker.phone.number('#########');
 const sampleSurname = faker.name.lastName();
 const sampleBirthdate = faker.phone.number('0#0#19##')
-const sampleEmail = faker.internet.email();
+const sampleEmail = faker.internet.email("", "", "test.mug.pl");
 
 Cypress.Commands.add("fillRegForm", () => {
     cy.get('div[class="input"]').first().type(samplePhone);
